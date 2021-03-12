@@ -10,33 +10,22 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val btCalcular = calcular
-        //val resultado = resultado
+        calcular.setOnClickListener {
+            val nota1 = nota1.text.toString().toFloatOrNull()
+            val nota2 = nota2.text.toString().toFloatOrNull()
+            val aps = aps.text.toString().toFloatOrNull()
 
-        btCalcular.setOnClickListener {
-            val nota1 = (nota1.text.toString()).toDouble()
-            val nota2 = (nota2.text.toString()).toDouble()
-            val aps = (aps.text.toString()).toDouble()
+            if (nota1 != null && nota2 != null && aps != null) {
+                val media = (nota1 * 0.4) + (nota2 + aps) * 0.6
+                //val number2digits: Double = String.format("%.2f", media).toDouble()
 
-            val media = (nota1 * 0.4) + (nota2 + aps) * 0.6
-            //val number2digits: Double = String.format("%.2f", media).toDouble()
-
-            if (media >= 6) {
-                resultado.setText(
-                    """
-                        Aluno Aprovado    
-                        Média final: $media         
-    """.trimIndent()
-                )
-                resultado.setTextColor(Color.GREEN)
-            } else {
-                resultado.setText(
-                    """
-                        Aluno Reprovado    
-                        Média final: $media         
-    """.trimIndent()
-                )
-                resultado.setTextColor(Color.RED)
+                if (media >= 6) {
+                    resultado.text ="Aluno Aprovado\nMédia final: %.2f".format(media)
+                    resultado.setTextColor(Color.GREEN)
+                } else {
+                    resultado.text = "Aluno Reprovado\nMédia final: %.2f".format(media)
+                    resultado.setTextColor(Color.RED)
+                }
             }
         }
 
