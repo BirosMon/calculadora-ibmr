@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">Calculadora Notas</string>
-    <string name="nota_2">Nota 2</string>
+    <string name="nota_2">Nota 2 (0–10)</string>
     <string name="calcular">Calcular</string>
 </resources>

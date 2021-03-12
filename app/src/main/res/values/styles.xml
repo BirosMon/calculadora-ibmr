@@ -3,7 +3,7 @@
 
     <style name="styleBoxFlutter">
         <item name="android:background">#F8F9FA</item>
-        <item name="android:ems">10</item>
+
         <item name="android:gravity">center</item>
         <item name="android:inputType">number</item>
         <item name="android:textColorHint">@color/azulDoFlutter</item>
